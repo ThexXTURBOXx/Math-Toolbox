@@ -1,0 +1,6 @@
+{
+  "name": "Math Toolbox",
+  "tagline": "Computes everything for you!",
+  "body": "### The Calculator of the Future!\r\nThis is a new Java Application by ThexXTURBOXx (Nico).\r\nIt calculates things like quadratic equations, Pythagoras, etc.\r\nSupport for simple Physics and Chemistry is planned.\r\n\r\n### Authors and Contributors\r\nThexXTURBOXx alone:\r\n - 16 years old\r\n - German\r\n - 11th grade, will study Computer Science and Maths (maybe as teaching profession)\r\n\r\n### Support or Contact\r\nJust create a [new Issue here]().\r\nIf you already know how to fix it, then create a [new Pull Request here]().\r\nIf you just want to translate this to another language, then follow the instructions in the [README]().",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
