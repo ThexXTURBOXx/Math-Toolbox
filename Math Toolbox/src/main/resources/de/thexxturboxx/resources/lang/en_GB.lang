@@ -1,6 +1,12 @@
 lang=British English
 
+main.welcome=Welcome
+main.beginning=Homepage
+
+math.vectors=Vectors
+
 exc.sidesubzero=There can't be a side with a length sub 0.
 exc.twodiffsides=You have to give 2 different sides.
 exc.katbiggerhyp=A cathetus can't be bigger than a hypotenuse.
 exc.sidenotfound=The given side can't be found.
+exc.topicnotfound=The topic can't be found.

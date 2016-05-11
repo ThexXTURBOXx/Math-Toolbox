@@ -1,6 +1,12 @@
 lang=Deutsch
 
+main.welcome=Willkommen
+main.beginning=Startseite
+
+math.vectors=Vektoren
+
 exc.sidesubzero=Es kann keine Seite mit einer Länge unter 0 existieren.
 exc.twodiffsides=Es müssen mindestens 2 verschiedene Seiten angegeben werden.
 exc.katbiggerhyp=Eine Kathete kann nicht größer sein als eine Hypotenuse.
 exc.sidenotfound=Die angegebene Seite kann nicht gefunden werden.
+exc.topicnotfound=Das Thema konnte nicht gefunden werden.
