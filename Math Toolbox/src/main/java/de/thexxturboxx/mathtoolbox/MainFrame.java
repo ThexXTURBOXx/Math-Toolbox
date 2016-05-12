@@ -8,9 +8,12 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 import de.thexxturboxx.mathtoolbox.util.LangHelper;
 import de.thexxturboxx.mathtoolbox.util.TopicHelper;
@@ -20,32 +23,48 @@ import de.thexxturboxx.mathtoolbox.util.TopicHelper;
 @SuppressWarnings({"serial", "unchecked", "rawtypes"})
 public class MainFrame extends JFrame {
 	
-	protected static JScrollPane scrollPane;
+	protected ParallelGroup vertical;
+	protected ParallelGroup horizontal;
 	
-	protected static GroupLayout groupLayout;
+	protected int index;
 	
-	private int width = 1024;
-	private int height = 512;
+	protected int width = 1024;
+	protected int height = 512;
 	
-	public MainFrame(int topicIndex, GroupLayout.Group vertical, GroupLayout.Group horizontal) throws IOException, URISyntaxException {
+	public MainFrame(int topicIndex) throws IOException, URISyntaxException {
+		index = topicIndex;
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MathToolbox.class.getResource("/de/thexxturboxx/resources/images/battleaxe_diamond.png")));
 		setTitle("Math Toolbox");
 		setSize(width, height);
 		
-		scrollPane = new JScrollPane();
-		groupLayout = new GroupLayout(getContentPane());
-		groupLayout.setHorizontalGroup(horizontal);
-		groupLayout.setVerticalGroup(vertical);
+		JScrollPane scrollPane = new JScrollPane();
+		GroupLayout groupLayout = new GroupLayout(getContentPane());
+		
+		groupLayout.setVerticalGroup(vertical =
+				groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+						.addGap(469))
+						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE));
+		
+		groupLayout.setHorizontalGroup(horizontal =
+				groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addContainerGap(772, Short.MAX_VALUE)));
 		
 		String[] l = new String[] {LangHelper.getTranslated("main.beginning"), LangHelper.getTranslated("math.vectors")};
+		
+		//Only for the WindowBuilder, that it works...
+		//String[] l = new String[] {"Startseite", "Vektoren"};
 		
 		final JList list = new JList(l);
 		list.setSelectedIndex(topicIndex);
 		MouseListener mouseListener = new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
-		    	if(e.getButton() == 1) {
+		    	if(list.getSelectedIndex() != index) {
 		    		try {
 						TopicHelper.openUpTopic(list.getSelectedIndex());
 					} catch (IOException e1) {
@@ -59,6 +78,5 @@ public class MainFrame extends JFrame {
 		list.addMouseListener(mouseListener);
 		scrollPane.setViewportView(list);
 		getContentPane().setLayout(groupLayout);
-		setVisible(true);
 	}
 }

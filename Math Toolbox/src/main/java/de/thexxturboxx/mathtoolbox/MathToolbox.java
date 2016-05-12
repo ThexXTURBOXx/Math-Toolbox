@@ -13,7 +13,7 @@ public class MathToolbox {
 			//Main Loop
 			//TODO Allow the user to set the language in a config screen
 			ConfigHelper.set("lang", "de_DE");
-			frame = new MathFrame();
+			frame = new StartFrame();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
