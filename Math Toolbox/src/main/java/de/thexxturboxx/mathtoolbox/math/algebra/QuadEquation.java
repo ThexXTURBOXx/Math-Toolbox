@@ -2,9 +2,7 @@ package de.thexxturboxx.mathtoolbox.math.algebra;
 
 public class QuadEquation {
 	
-	private double a;
-	private double b;
-	private double c;
+	private double a, b, c;
 	private XList l;
 	
 	public QuadEquation(double a, double b, double c) {

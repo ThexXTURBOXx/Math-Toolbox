@@ -1,5 +1,6 @@
 package de.thexxturboxx.mathtoolbox;
 
+import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -23,13 +24,19 @@ import de.thexxturboxx.mathtoolbox.util.TopicHelper;
 @SuppressWarnings({"serial", "unchecked", "rawtypes"})
 public class MainFrame extends JFrame {
 	
-	protected ParallelGroup vertical;
-	protected ParallelGroup horizontal;
+	protected ParallelGroup vertical, horizontal;
+	
+	protected JScrollPane scrollPane;
+	protected GroupLayout groupLayout;
 	
 	protected int index;
 	
 	protected int width = 1024;
 	protected int height = 512;
+	
+	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	double dwidth = screenSize.getWidth();
+	double dheight = screenSize.getHeight();
 	
 	public MainFrame(int topicIndex) throws IOException, URISyntaxException {
 		index = topicIndex;
@@ -38,9 +45,10 @@ public class MainFrame extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MathToolbox.class.getResource("/de/thexxturboxx/resources/images/battleaxe_diamond.png")));
 		setTitle("Math Toolbox");
 		setSize(width, height);
+		setLocation((int) (dwidth / 2 - width / 2),(int)  (dheight / 2 - height / 2));
 		
-		JScrollPane scrollPane = new JScrollPane();
-		GroupLayout groupLayout = new GroupLayout(getContentPane());
+		scrollPane = new JScrollPane();
+		groupLayout = new GroupLayout(getContentPane());
 		
 		groupLayout.setVerticalGroup(vertical =
 				groupLayout.createParallelGroup(Alignment.LEADING)
@@ -57,13 +65,11 @@ public class MainFrame extends JFrame {
 		
 		String[] l = new String[] {LangHelper.getTranslated("main.beginning"), LangHelper.getTranslated("math.vectors")};
 		
-		//Only for the WindowBuilder, that it works...
-		//String[] l = new String[] {"Startseite", "Vektoren"};
-		
 		final JList list = new JList(l);
 		list.setSelectedIndex(topicIndex);
 		MouseListener mouseListener = new MouseAdapter() {
-		    public void mouseClicked(MouseEvent e) {
+		    @Override
+			public void mouseClicked(MouseEvent e) {
 		    	if(list.getSelectedIndex() != index) {
 		    		try {
 						TopicHelper.openUpTopic(list.getSelectedIndex());

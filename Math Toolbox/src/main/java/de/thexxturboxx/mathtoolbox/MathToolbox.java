@@ -7,6 +7,7 @@ import de.thexxturboxx.mathtoolbox.util.ConfigHelper;
 public class MathToolbox {
 	
 	public static JFrame frame;
+	public static final String homeURL = "http://thexxturboxx.github.io/Math-Toolbox/";
 	
 	public static void main(String[] args) {
 		try {

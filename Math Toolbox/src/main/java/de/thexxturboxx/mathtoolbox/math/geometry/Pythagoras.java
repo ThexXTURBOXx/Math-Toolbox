@@ -7,9 +7,7 @@ import de.thexxturboxx.mathtoolbox.util.LangHelper;
 
 public class Pythagoras {
 	
-	private double a;
-	private double b;
-	private double c;
+	private double a, b, c;
 	
 	public Pythagoras(double a, double b, double c) throws IllegalArgumentException, IOException, URISyntaxException {
 		if(a < 0 || b < 0 || c < 0) {

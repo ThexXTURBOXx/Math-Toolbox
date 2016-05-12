@@ -1,7 +1,14 @@
 lang=British English
 
-main.welcome=Welcome
+main.welcome=Welcome! Choose one of the topics at the left to get started!
+main.desc=You can also press on "Config", if you need to change something.
 main.beginning=Homepage
+main.cfg=Config
+main.website=Website
+
+cfg.nts=Nothing to see here for now...
+cfg.exit=Exit
+cfg.tfiu=This frame is useless
 
 math.vectors=Vectors
 

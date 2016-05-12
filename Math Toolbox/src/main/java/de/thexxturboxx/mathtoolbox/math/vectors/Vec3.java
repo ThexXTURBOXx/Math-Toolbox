@@ -2,9 +2,7 @@ package de.thexxturboxx.mathtoolbox.math.vectors;
 
 public class Vec3 {
 	
-	public double x1;
-	public double x2;
-	public double x3;
+	public double x1, x2, x3;
 	
 	public Vec3(double x1, double x2, double x3) {
 		this.x1 = x1;

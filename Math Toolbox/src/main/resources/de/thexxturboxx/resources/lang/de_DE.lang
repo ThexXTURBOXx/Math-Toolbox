@@ -1,7 +1,14 @@
 lang=Deutsch
 
-main.welcome=Willkommen
+main.welcome=Willkommen! Wähle links eins der Themen aus, um anzufangen!
+main.desc=Du kannst auch auf "Einstellungen" drücken, wenn du etwas umstellen willst.
 main.beginning=Startseite
+main.cfg=Einstellungen
+main.website=Webseite
+
+cfg.nts=Nix zu sehen hier...
+cfg.exit=Schließen
+cfg.tfiu=Dieses Fenster ist nutzlos
 
 math.vectors=Vektoren
 
