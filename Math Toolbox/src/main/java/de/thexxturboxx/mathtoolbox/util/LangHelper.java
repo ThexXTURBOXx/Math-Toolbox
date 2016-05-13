@@ -1,10 +1,12 @@
 package de.thexxturboxx.mathtoolbox.util;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 import de.thexxturboxx.mathtoolbox.MathToolbox;
@@ -20,8 +22,7 @@ public class LangHelper {
 	}
 	
 	public static String newTranslation(String name, String lang) throws IOException {
-		URL u = MathToolbox.class.getResource("/de/thexxturboxx/resources/lang/" + lang + ".lang");
-		List<String> lines = Files.readAllLines(Paths.get(u.getFile().substring(1).replace("%20", " ")));
+		List<String> lines = readAllLines(lang);
 		for(String l : lines) {
 			if(!l.equals("")) {
 				String s = l.substring(0, l.indexOf("="));
@@ -31,6 +32,22 @@ public class LangHelper {
 			}
 		}
 		return name;
+	}
+	
+	public static List<String> readAllLines(String lang) throws IOException {
+		BufferedReader reader = newBufferedReader(lang);
+		List<String> result = new ArrayList<String>();
+		for (;;) {
+			String line = reader.readLine();
+			if (line == null) break;
+			result.add(line);
+		}
+		return result;
+    }
+	
+	public static BufferedReader newBufferedReader(String lang) {
+		Reader reader = new InputStreamReader(MathToolbox.class.getResourceAsStream("/de/thexxturboxx/resources/lang/" + lang + ".lang"), StandardCharsets.UTF_8.newDecoder());
+		return new BufferedReader(reader);
 	}
 	
 	public static String getLangKey(String name) {
