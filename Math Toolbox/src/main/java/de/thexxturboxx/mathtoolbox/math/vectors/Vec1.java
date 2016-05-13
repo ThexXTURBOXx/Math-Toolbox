@@ -24,6 +24,10 @@ public class Vec1 {
 		return new Vec1(x1 * factor);
 	}
 	
+	public Vec1 divide(double factor) {
+		return new Vec1(x1 / factor);
+	}
+	
 	public Vec1 unitVec() {
 		return new Vec1(1);
 	}

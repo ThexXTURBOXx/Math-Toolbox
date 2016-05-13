@@ -25,6 +25,10 @@ public class Vec2 {
 		return new Vec2(x1 * factor, x2 * factor);
 	}
 	
+	public Vec2 divide(double factor) {
+		return new Vec2(x1 / factor, x2 / factor);
+	}
+	
 	public Vec2 unitVec() {
 		return sProduct(1 / length());
 	}

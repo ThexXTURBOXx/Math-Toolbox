@@ -5,15 +5,32 @@ main.desc=You can also press on "Config", if you need to change something.
 main.beginning=Homepage
 main.cfg=Config
 main.website=Website
+main.ufound=New Update found! Download it on the website!
 
 cfg.lang=Language
 cfg.exit=Exit
 cfg.restart=Some settings need a restart of the application
 
 math.vectors=Vectors
+math.pythagoras=Pythagoras
+math.quadequation=Quadratic Formula
+
+math.result=Result
+
+vectors.desc=Give two vectors and press one of the buttons (You may leave fields free).
+vectors.cross=Cross Product (Only 3D)
+vectors.scale=Scalar
+vectors.smultiply=S-Multiplication
+vectors.add=Addition
+vectors.sub=Subtraction
+vectors.div=Division
+vectors.length=Amount
+vectors.unitvec=Unit Vector
 
 exc.sidesubzero=There can't be a side with a length sub 0.
 exc.twodiffsides=You have to give 2 different sides.
 exc.katbiggerhyp=A cathetus can't be bigger than a hypotenuse.
 exc.sidenotfound=The given side can't be found.
 exc.topicnotfound=The topic can't be found.
+exc.onevec=There have to be a X1-Coordinate.
+exc.cross3d=A Cross Product only works for 3D-vectors.

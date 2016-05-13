@@ -18,4 +18,13 @@ public class TopicHelper {
 		}
 	}
 	
+	public static String getTopicName(int value) throws IOException, URISyntaxException {
+		switch(value) {
+		case 1: return LangHelper.getTranslated("math.vectors");
+		case 2: return LangHelper.getTranslated("math.pythagoras");
+		case 3: return LangHelper.getTranslated("math.quadequation");
+		default: throw new IllegalArgumentException(LangHelper.getTranslated("exc.topicnotfound"));
+		}
+	}
+	
 }

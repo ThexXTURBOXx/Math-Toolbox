@@ -12,9 +12,25 @@ cfg.exit=Schließen
 cfg.restart=Manche Einstellungen benötigen einen Neustart
 
 math.vectors=Vektoren
+math.pythagoras=Pythagoras
+math.quadequation=Mitternachtsformel
+
+math.result=Ergebnis
+
+vectors.desc=Gib zwei Vektoren an und drücke einen der Buttons unten (Lasse ggf. Felder frei).
+vectors.cross=Kreuzprodukt (Nur 3D)
+vectors.scale=Skalarprodukt
+vectors.smultiply=S-Multiplikation
+vectors.add=Addition
+vectors.sub=Subtraktion
+vectors.div=Division
+vectors.length=Betrag
+vectors.unitvec=Einheitsvektor
 
 exc.sidesubzero=Es kann keine Seite mit einer Länge unter 0 existieren.
 exc.twodiffsides=Es müssen mindestens 2 verschiedene Seiten angegeben werden.
 exc.katbiggerhyp=Eine Kathete kann nicht größer sein als eine Hypotenuse.
 exc.sidenotfound=Die angegebene Seite kann nicht gefunden werden.
 exc.topicnotfound=Das Thema konnte nicht gefunden werden.
+exc.onevec=Es muss mindestens die X1-Koordinate gegeben sein.
+exc.cross3d=Ein Kreuzprodukt geht nur bei 3-dimensionalen Vektoren.

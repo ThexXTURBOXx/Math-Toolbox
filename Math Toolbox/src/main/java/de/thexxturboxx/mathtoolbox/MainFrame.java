@@ -43,7 +43,11 @@ public class MainFrame extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MathToolbox.class.getResource("/de/thexxturboxx/resources/images/battleaxe_diamond.png")));
-		setTitle("Math Toolbox " + UpdateCheck.Version);
+		if(index == 0) {
+			setTitle("Math Toolbox " + UpdateCheck.Version);
+		} else {
+			setTitle("Math Toolbox - " + TopicHelper.getTopicName(index));
+		}
 		setSize(width, height);
 		setLocation((int) (dwidth / 2 - width / 2),(int)  (dheight / 2 - height / 2));
 		
@@ -63,7 +67,10 @@ public class MainFrame extends JFrame {
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addContainerGap(772, Short.MAX_VALUE)));
 		
-		String[] l = new String[] {LangHelper.getTranslated("main.beginning"), LangHelper.getTranslated("math.vectors")};
+		String[] l = new String[] {
+				LangHelper.getTranslated("main.beginning"), LangHelper.getTranslated("math.vectors"),
+				LangHelper.getTranslated("math.pythagoras"), LangHelper.getTranslated("math.quadequation")
+				};
 		
 		final JList list = new JList(l);
 		list.setSelectedIndex(topicIndex);

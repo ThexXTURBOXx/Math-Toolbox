@@ -32,6 +32,10 @@ public class Vec3 {
 		return new Vec3(x1 * factor, x2 * factor, x3 * factor);
 	}
 	
+	public Vec3 divide(double factor) {
+		return new Vec3(x1 / factor, x2 / factor, x3 / factor);
+	}
+	
 	public Vec3 unitVec() {
 		return sProduct(1 / length());
 	}
