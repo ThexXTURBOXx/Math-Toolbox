@@ -1,9 +1,9 @@
 lang=British English
 
 main.welcome=Welcome! Choose one of the topics at the left to get started!
-main.desc=You can also press on "Config", if you need to change something.
+main.desc=You can also press on "Settings", if you need to change something.
 main.beginning=Homepage
-main.cfg=Config
+main.cfg=Settings
 main.website=Website
 main.ufound=New Update found! Download it on the website!
 
