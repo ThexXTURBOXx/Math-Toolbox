@@ -19,7 +19,7 @@ public class LangHelper {
 		return s;
 	}
 	
-	private static String newTranslation(String name, String lang) throws IOException {
+	public static String newTranslation(String name, String lang) throws IOException {
 		URL u = MathToolbox.class.getResource("/de/thexxturboxx/resources/lang/" + lang + ".lang");
 		List<String> lines = Files.readAllLines(Paths.get(u.getFile().substring(1).replace("%20", " ")));
 		for(String l : lines) {
@@ -31,6 +31,19 @@ public class LangHelper {
 			}
 		}
 		return name;
+	}
+	
+	public static String getLangKey(String name) {
+		if(name.equals("British English")) return "en_GB";
+		if(name.equals("Deutsch")) return "de_DE";
+		return null;
+	}
+
+	public static int getLangIndex() {
+		String name = ConfigHelper.get("lang");
+		if(name.equals("de_DE")) return 0;
+		if(name.equals("en_GB")) return 1;
+		return -1;
 	}
 	
 }

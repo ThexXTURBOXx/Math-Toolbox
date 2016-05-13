@@ -43,7 +43,7 @@ public class MainFrame extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MathToolbox.class.getResource("/de/thexxturboxx/resources/images/battleaxe_diamond.png")));
-		setTitle("Math Toolbox");
+		setTitle("Math Toolbox " + UpdateCheck.Version);
 		setSize(width, height);
 		setLocation((int) (dwidth / 2 - width / 2),(int)  (dheight / 2 - height / 2));
 		

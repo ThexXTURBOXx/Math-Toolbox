@@ -1,5 +1,6 @@
 package de.thexxturboxx.mathtoolbox;
 
+import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -31,6 +32,12 @@ public class StartFrame extends MainFrame implements ActionListener {
 		btnConfig.addActionListener(this);
 		btnNewButton = new JButton(LangHelper.getTranslated("main.website"));
 		btnNewButton.addActionListener(this);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setForeground(Color.MAGENTA);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
+		if(UpdateCheck.latestVersion != null && !UpdateCheck.isNewest) {
+			lblNewLabel.setText(LangHelper.getTranslated("main.ufound"));
+		}
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -41,7 +48,8 @@ public class StartFrame extends MainFrame implements ActionListener {
 							.addGap(53)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblWelcomeIHope)
-								.addComponent(lblF))
+								.addComponent(lblF)
+								.addComponent(lblNewLabel))
 							.addPreferredGap(ComponentPlacement.RELATED, 432, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addPreferredGap(ComponentPlacement.RELATED)
@@ -57,7 +65,9 @@ public class StartFrame extends MainFrame implements ActionListener {
 					.addComponent(lblWelcomeIHope)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblF)
-					.addPreferredGap(ComponentPlacement.RELATED, 403, Short.MAX_VALUE)
+					.addGap(363)
+					.addComponent(lblNewLabel)
+					.addPreferredGap(ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnConfig)
 						.addComponent(btnNewButton)))

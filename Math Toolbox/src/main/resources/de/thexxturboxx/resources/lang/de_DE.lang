@@ -5,10 +5,11 @@ main.desc=Du kannst auch auf "Einstellungen" drücken, wenn du etwas umstellen w
 main.beginning=Startseite
 main.cfg=Einstellungen
 main.website=Webseite
+main.ufound=Neues Update gefunden! Lade es auf der Webseite herunter!
 
-cfg.nts=Nix zu sehen hier...
+cfg.lang=Sprache
 cfg.exit=Schließen
-cfg.tfiu=Dieses Fenster ist nutzlos
+cfg.restart=Manche Einstellungen benötigen einen Neustart
 
 math.vectors=Vektoren
 

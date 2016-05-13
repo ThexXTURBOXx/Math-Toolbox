@@ -6,9 +6,9 @@ main.beginning=Homepage
 main.cfg=Config
 main.website=Website
 
-cfg.nts=Nothing to see here for now...
+cfg.lang=Language
 cfg.exit=Exit
-cfg.tfiu=This frame is useless
+cfg.restart=Some settings need a restart of the application
 
 math.vectors=Vectors
 
