@@ -18,7 +18,6 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import de.thexxturboxx.mathtoolbox.MainFrame;
-import de.thexxturboxx.mathtoolbox.MathToolbox;
 import de.thexxturboxx.mathtoolbox.util.LangHelper;
 
 @SuppressWarnings({"serial"})
@@ -38,7 +37,6 @@ public class VectorFrame extends MainFrame implements ActionListener {
 		super(1);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MathToolbox.class.getResource("/de/thexxturboxx/resources/images/battleaxe_diamond.png")));
 		
 		JLabel lblNewLabel = new JLabel("<html><u>" + LangHelper.getTranslated("math.vectors") + "</u></<html>");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -127,6 +125,10 @@ public class VectorFrame extends MainFrame implements ActionListener {
 		btnUnitVector = new JButton(LangHelper.getTranslated("vectors.unitvec"));
 		btnLength.addActionListener(this);
 		btnUnitVector.addActionListener(this);
+		
+		JLabel lblNewLabel_3 = new JLabel("(" + LangHelper.getTranslated("vectors.factor") + ")");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -157,7 +159,11 @@ public class VectorFrame extends MainFrame implements ActionListener {
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(Y3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(Y2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(Y1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(Y1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(lblNewLabel_3)))
+							.addContainerGap())
 						.addComponent(lblNewLabel_2)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
@@ -167,7 +173,7 @@ public class VectorFrame extends MainFrame implements ActionListener {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(label_11, GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+									.addComponent(label_11, GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
 									.addContainerGap())
 								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 									.addComponent(label_9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -213,7 +219,8 @@ public class VectorFrame extends MainFrame implements ActionListener {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-						.addComponent(Y1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(Y1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_3))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
@@ -266,7 +273,7 @@ public class VectorFrame extends MainFrame implements ActionListener {
 		Vec1 vec1 = null, vec11 = null, vec1r = null;
 		Vec2 vec2 = null, vec21 = null, vec2r = null;
 		Vec3 vec3 = null, vec31 = null, vec3r = null;
-		double r = Double.NaN;
+		double r = Double.NaN, i = Double.NaN;
 		if(X1.getText().equals("")) {
 			try {
 				throw new IllegalArgumentException(LangHelper.getTranslated("exc.onevec"));
@@ -275,18 +282,24 @@ public class VectorFrame extends MainFrame implements ActionListener {
 			} catch (URISyntaxException e1) {
 				e1.printStackTrace();
 			}
-		} else if(X2.getText().equals("")) {
+		} else if(X2.getText().equals("") && !Y1.getText().equals("") && Y2.getText().equals("")) {
 			vec1 = new Vec1(Double.parseDouble(X1.getText()));
+			i = Double.parseDouble(Y1.getText());
 			vec11 = new Vec1(Double.parseDouble(Y1.getText()));
-		} else if(X3.getText().equals("")) {
+		} else if(X3.getText().equals("") && !Y1.getText().equals("") && Y2.getText().equals("")) {
+			vec2 = new Vec2(Double.parseDouble(X1.getText()), Double.parseDouble(X2.getText()));
+			i = Double.parseDouble(Y1.getText());
+		} else if(X3.getText().equals("") && Y3.getText().equals("")) {
 			vec2 = new Vec2(Double.parseDouble(X1.getText()), Double.parseDouble(X2.getText()));
 			vec21 = new Vec2(Double.parseDouble(Y1.getText()), Double.parseDouble(Y2.getText()));
+		} else if(!Y1.getText().equals("") && Y2.getText().equals("")) {
+			vec3 = new Vec3(Double.parseDouble(X1.getText()), Double.parseDouble(X2.getText()), Double.parseDouble(X3.getText()));
+			i = Double.parseDouble(Y1.getText());
 		} else {
 			vec3 = new Vec3(Double.parseDouble(X1.getText()), Double.parseDouble(X2.getText()), Double.parseDouble(X3.getText()));
 			vec31 = new Vec3(Double.parseDouble(Y1.getText()), Double.parseDouble(Y2.getText()), Double.parseDouble(Y3.getText()));
 		}
 		if(e.getSource() == btnAddition) {
-			System.out.println("das");
 			if(vec1 == null && vec2 == null) {
 				//Vec3
 				vec3r = vec3.add(vec31);
@@ -327,11 +340,23 @@ public class VectorFrame extends MainFrame implements ActionListener {
 		if(e.getSource() == btnDivision) {
 			if(vec1 == null && vec2 == null) {
 				//Vec3
+				vec3r = vec3.divide(i);
+				label_9.setText(Double.toString(vec3r.x1).replace(".0", ""));
+				label_10.setText(Double.toString(vec3r.x2).replace(".0", ""));
+				label_11.setText(Double.toString(vec3r.x3).replace(".0", ""));
 			} else if(vec2 == null && vec3 == null) {
 				//Vec1
+				vec1r = vec1.divide(i);
+				label_9.setText(Double.toString(vec1r.x1).replace(".0", ""));
+				label_10.setText("");
+				label_11.setText("");
 			} else if(vec1 == null && vec3 == null) {
 				//Vec2
-			}			
+				vec2r = vec2.divide(i);
+				label_9.setText(Double.toString(vec2r.x1).replace(".0", ""));
+				label_10.setText(Double.toString(vec2r.x2).replace(".0", ""));
+				label_11.setText("");
+			}
 		}
 		if(e.getSource() == btnScaleproduct) {
 			if(vec1 == null && vec2 == null) {
@@ -344,18 +369,30 @@ public class VectorFrame extends MainFrame implements ActionListener {
 				//Vec2
 				r = vec2.scaleProduct(vec21);
 			}
-			label_9.setText(Double.toString(r));
+			label_9.setText(Double.toString(r).replace(".0", ""));
 			label_10.setText("");
 			label_11.setText("");		
 		}
 		if(e.getSource() == btnSmultiplication) {
 			if(vec1 == null && vec2 == null) {
 				//Vec3
+				vec3r = vec3.sProduct(i);
+				label_9.setText(Double.toString(vec3r.x1).replace(".0", ""));
+				label_10.setText(Double.toString(vec3r.x2).replace(".0", ""));
+				label_11.setText(Double.toString(vec3r.x3).replace(".0", ""));
 			} else if(vec2 == null && vec3 == null) {
 				//Vec1
+				vec1r = vec1.sProduct(i);
+				label_9.setText(Double.toString(vec1r.x1).replace(".0", ""));
+				label_10.setText("");
+				label_11.setText("");
 			} else if(vec1 == null && vec3 == null) {
 				//Vec2
-			}			
+				vec2r = vec2.sProduct(i);
+				label_9.setText(Double.toString(vec2r.x1).replace(".0", ""));
+				label_10.setText(Double.toString(vec2r.x2).replace(".0", ""));
+				label_11.setText("");
+			}		
 		}
 		if(e.getSource() == btnSubtraction) {
 			if(vec1 == null && vec2 == null) {
@@ -389,7 +426,7 @@ public class VectorFrame extends MainFrame implements ActionListener {
 				//Vec2
 				r = vec2.length();
 			}	
-			label_9.setText(Double.toString(r));
+			label_9.setText(Double.toString(r).replace(".0", ""));
 			label_10.setText("");
 			label_11.setText("");		
 		}

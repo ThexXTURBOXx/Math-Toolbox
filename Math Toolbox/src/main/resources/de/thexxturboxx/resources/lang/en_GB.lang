@@ -26,6 +26,7 @@ vectors.sub=Subtraction
 vectors.div=Division
 vectors.length=Amount
 vectors.unitvec=Unit Vector
+vectors.factor=or Factor
 
 exc.sidesubzero=There can't be a side with a length sub 0.
 exc.twodiffsides=You have to give 2 different sides.

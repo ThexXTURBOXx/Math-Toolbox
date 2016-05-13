@@ -18,6 +18,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.WindowConstants;
 
 import de.thexxturboxx.mathtoolbox.util.ConfigHelper;
 import de.thexxturboxx.mathtoolbox.util.LangHelper;
@@ -41,8 +42,9 @@ public class ConfigFrame extends JFrame implements ActionListener, WindowListene
 		setType(Type.POPUP);
 		setAlwaysOnTop(true);
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setTitle(LangHelper.getTranslated("main.cfg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MathToolbox.class.getResource("/de/thexxturboxx/resources/images/cfgicon.png")));
 		setSize(width, height);
 		setLocation((int) (dwidth / 2 - width / 2),(int)  (dheight / 2 - height / 2));
 		addWindowListener(this);

@@ -26,6 +26,7 @@ vectors.sub=Subtraktion
 vectors.div=Division
 vectors.length=Betrag
 vectors.unitvec=Einheitsvektor
+vectors.factor=oder Faktor
 
 exc.sidesubzero=Es kann keine Seite mit einer Länge unter 0 existieren.
 exc.twodiffsides=Es müssen mindestens 2 verschiedene Seiten angegeben werden.
