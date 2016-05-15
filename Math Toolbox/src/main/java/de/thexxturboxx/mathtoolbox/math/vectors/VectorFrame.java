@@ -273,7 +273,7 @@ public class VectorFrame extends MainFrame implements ActionListener {
 		Vec1 vec1 = null, vec11 = null, vec1r = null;
 		Vec2 vec2 = null, vec21 = null, vec2r = null;
 		Vec3 vec3 = null, vec31 = null, vec3r = null;
-		double r = Double.NaN, i = Double.NaN;
+		double r = Double.NaN, i = Double.parseDouble(Y1.getText());
 		if(X1.getText().equals("")) {
 			try {
 				throw new IllegalArgumentException(LangHelper.getTranslated("exc.onevec"));
@@ -284,17 +284,14 @@ public class VectorFrame extends MainFrame implements ActionListener {
 			}
 		} else if(X2.getText().equals("") && !Y1.getText().equals("") && Y2.getText().equals("")) {
 			vec1 = new Vec1(Double.parseDouble(X1.getText()));
-			i = Double.parseDouble(Y1.getText());
 			vec11 = new Vec1(Double.parseDouble(Y1.getText()));
 		} else if(X3.getText().equals("") && !Y1.getText().equals("") && Y2.getText().equals("")) {
 			vec2 = new Vec2(Double.parseDouble(X1.getText()), Double.parseDouble(X2.getText()));
-			i = Double.parseDouble(Y1.getText());
 		} else if(X3.getText().equals("") && Y3.getText().equals("")) {
 			vec2 = new Vec2(Double.parseDouble(X1.getText()), Double.parseDouble(X2.getText()));
 			vec21 = new Vec2(Double.parseDouble(Y1.getText()), Double.parseDouble(Y2.getText()));
 		} else if(!Y1.getText().equals("") && Y2.getText().equals("")) {
 			vec3 = new Vec3(Double.parseDouble(X1.getText()), Double.parseDouble(X2.getText()), Double.parseDouble(X3.getText()));
-			i = Double.parseDouble(Y1.getText());
 		} else {
 			vec3 = new Vec3(Double.parseDouble(X1.getText()), Double.parseDouble(X2.getText()), Double.parseDouble(X3.getText()));
 			vec31 = new Vec3(Double.parseDouble(Y1.getText()), Double.parseDouble(Y2.getText()), Double.parseDouble(Y3.getText()));
