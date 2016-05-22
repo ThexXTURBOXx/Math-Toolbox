@@ -12,12 +12,13 @@ cfg.exit=Exit
 cfg.restart=Some settings need a restart of the application
 
 math.vectors=Vectors
-math.pythagoras=Pythagoras
+math.pythagoras=Right Triangle
 math.quadequation=Quadratic Formula
 
 math.result=Result
+math.compute=Compute
 
-vectors.desc=Give two vectors and press one of the buttons (You may leave fields free).
+vectors.desc=Give two vectors and click on one of the buttons (You may leave fields free).
 vectors.cross=Cross Product (Only 3D)
 vectors.scale=Scalar
 vectors.smultiply=S-Multiplication
@@ -27,6 +28,8 @@ vectors.div=Division
 vectors.length=Amount
 vectors.unitvec=Unit Vector
 vectors.factor=or Factor
+
+pyth.desc=Give all values you have and click on "Compute" (You may leave fields free).
 
 exc.sidesubzero=There can't be a side with a length sub 0.
 exc.twodiffsides=You have to give 2 different sides.

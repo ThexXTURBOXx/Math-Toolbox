@@ -12,10 +12,11 @@ cfg.exit=Schließen
 cfg.restart=Manche Einstellungen benötigen einen Neustart
 
 math.vectors=Vektoren
-math.pythagoras=Pythagoras
+math.pythagoras=Rechtwinkliges Dreieck
 math.quadequation=Mitternachtsformel
 
 math.result=Ergebnis
+math.compute=Rechnen
 
 vectors.desc=Gib zwei Vektoren an und drücke einen der Buttons unten (Lasse ggf. Felder frei).
 vectors.cross=Kreuzprodukt (Nur 3D)
@@ -27,6 +28,8 @@ vectors.div=Division
 vectors.length=Betrag
 vectors.unitvec=Einheitsvektor
 vectors.factor=oder Faktor
+
+pyth.desc=Gib hier alle Werte an, die du hast und drücke auf "Rechnen" (Lasse ggf. Felder frei).
 
 exc.sidesubzero=Es kann keine Seite mit einer Länge unter 0 existieren.
 exc.twodiffsides=Es müssen mindestens 2 verschiedene Seiten angegeben werden.

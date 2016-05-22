@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 
 import de.thexxturboxx.mathtoolbox.MathToolbox;
 import de.thexxturboxx.mathtoolbox.StartFrame;
+import de.thexxturboxx.mathtoolbox.math.geometry.PythagorasFrame;
 import de.thexxturboxx.mathtoolbox.math.vectors.VectorFrame;
 
 public class TopicHelper {
@@ -14,12 +15,14 @@ public class TopicHelper {
 		switch(value) {
 		case 0: MathToolbox.frame = new StartFrame(); break;
 		case 1: MathToolbox.frame = new VectorFrame(); break;
+		case 2: MathToolbox.frame = new PythagorasFrame(); break;
 		default: throw new IllegalArgumentException(LangHelper.getTranslated("exc.topicnotfound"));
 		}
 	}
 	
 	public static String getTopicName(int value) throws IOException, URISyntaxException {
 		switch(value) {
+		case 0: return LangHelper.getTranslated("main.beginning");
 		case 1: return LangHelper.getTranslated("math.vectors");
 		case 2: return LangHelper.getTranslated("math.pythagoras");
 		case 3: return LangHelper.getTranslated("math.quadequation");

@@ -16,7 +16,7 @@ public class Pythagoras {
 		if((a == 0 && b == 0) || (b == 0 && c == 0) || (a == 0 && c == 0)) {
 			throw new IllegalArgumentException(LangHelper.getTranslated("exc.twodiffsides"));
 		}
-		if(a >= b || b >= c) {
+		if((a >= c && c != 0) || (b >= c && c != 0)) {
 			throw new IllegalArgumentException(LangHelper.getTranslated("exc.katbiggerhyp"));
 		}
 		this.a = a;

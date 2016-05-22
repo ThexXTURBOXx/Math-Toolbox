@@ -12,7 +12,6 @@ import java.net.URISyntaxException;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -35,8 +34,6 @@ public class VectorFrame extends MainFrame implements ActionListener {
 	
 	public VectorFrame() throws IOException, URISyntaxException {
 		super(1);
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblNewLabel = new JLabel("<html><u>" + LangHelper.getTranslated("math.vectors") + "</u></<html>");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -300,20 +297,20 @@ public class VectorFrame extends MainFrame implements ActionListener {
 			if(vec1 == null && vec2 == null) {
 				//Vec3
 				vec3r = vec3.add(vec31);
-				label_9.setText(Double.toString(vec3r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec3r.x2).replace(".0", ""));
-				label_11.setText(Double.toString(vec3r.x3).replace(".0", ""));
+				label_9.setText(Double.toString(vec3r.x1));
+				label_10.setText(Double.toString(vec3r.x2));
+				label_11.setText(Double.toString(vec3r.x3));
 			} else if(vec2 == null && vec3 == null) {
 				//Vec1
 				vec1r = vec1.add(vec11);
-				label_9.setText(Double.toString(vec1r.x1).replace(".0", ""));
+				label_9.setText(Double.toString(vec1r.x1));
 				label_10.setText("");
 				label_11.setText("");
 			} else if(vec1 == null && vec3 == null) {
 				//Vec2
 				vec2r = vec2.add(vec21);
-				label_9.setText(Double.toString(vec2r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec2r.x2).replace(".0", ""));
+				label_9.setText(Double.toString(vec2r.x1));
+				label_10.setText(Double.toString(vec2r.x2));
 				label_11.setText("");
 			}
 		}
@@ -321,9 +318,9 @@ public class VectorFrame extends MainFrame implements ActionListener {
 			if(vec1 == null && vec2 == null) {
 				//Vec3
 				vec3r = vec3.crossProduct(vec31);
-				label_9.setText(Double.toString(vec3r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec3r.x2).replace(".0", ""));
-				label_11.setText(Double.toString(vec3r.x3).replace(".0", ""));
+				label_9.setText(Double.toString(vec3r.x1));
+				label_10.setText(Double.toString(vec3r.x2));
+				label_11.setText(Double.toString(vec3r.x3));
 			} else {
 				try {
 					throw new IllegalArgumentException(LangHelper.getTranslated("exc.cross3d"));
@@ -338,20 +335,20 @@ public class VectorFrame extends MainFrame implements ActionListener {
 			if(vec1 == null && vec2 == null) {
 				//Vec3
 				vec3r = vec3.divide(i);
-				label_9.setText(Double.toString(vec3r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec3r.x2).replace(".0", ""));
-				label_11.setText(Double.toString(vec3r.x3).replace(".0", ""));
+				label_9.setText(Double.toString(vec3r.x1));
+				label_10.setText(Double.toString(vec3r.x2));
+				label_11.setText(Double.toString(vec3r.x3));
 			} else if(vec2 == null && vec3 == null) {
 				//Vec1
 				vec1r = vec1.divide(i);
-				label_9.setText(Double.toString(vec1r.x1).replace(".0", ""));
+				label_9.setText(Double.toString(vec1r.x1));
 				label_10.setText("");
 				label_11.setText("");
 			} else if(vec1 == null && vec3 == null) {
 				//Vec2
 				vec2r = vec2.divide(i);
-				label_9.setText(Double.toString(vec2r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec2r.x2).replace(".0", ""));
+				label_9.setText(Double.toString(vec2r.x1));
+				label_10.setText(Double.toString(vec2r.x2));
 				label_11.setText("");
 			}
 		}
@@ -366,7 +363,7 @@ public class VectorFrame extends MainFrame implements ActionListener {
 				//Vec2
 				r = vec2.scaleProduct(vec21);
 			}
-			label_9.setText(Double.toString(r).replace(".0", ""));
+			label_9.setText(Double.toString(r));
 			label_10.setText("");
 			label_11.setText("");		
 		}
@@ -374,20 +371,20 @@ public class VectorFrame extends MainFrame implements ActionListener {
 			if(vec1 == null && vec2 == null) {
 				//Vec3
 				vec3r = vec3.sProduct(i);
-				label_9.setText(Double.toString(vec3r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec3r.x2).replace(".0", ""));
-				label_11.setText(Double.toString(vec3r.x3).replace(".0", ""));
+				label_9.setText(Double.toString(vec3r.x1));
+				label_10.setText(Double.toString(vec3r.x2));
+				label_11.setText(Double.toString(vec3r.x3));
 			} else if(vec2 == null && vec3 == null) {
 				//Vec1
 				vec1r = vec1.sProduct(i);
-				label_9.setText(Double.toString(vec1r.x1).replace(".0", ""));
+				label_9.setText(Double.toString(vec1r.x1));
 				label_10.setText("");
 				label_11.setText("");
 			} else if(vec1 == null && vec3 == null) {
 				//Vec2
 				vec2r = vec2.sProduct(i);
-				label_9.setText(Double.toString(vec2r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec2r.x2).replace(".0", ""));
+				label_9.setText(Double.toString(vec2r.x1));
+				label_10.setText(Double.toString(vec2r.x2));
 				label_11.setText("");
 			}		
 		}
@@ -395,20 +392,20 @@ public class VectorFrame extends MainFrame implements ActionListener {
 			if(vec1 == null && vec2 == null) {
 				//Vec3
 				vec3r = vec3.substract(vec31);
-				label_9.setText(Double.toString(vec3r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec3r.x2).replace(".0", ""));
-				label_11.setText(Double.toString(vec3r.x3).replace(".0", ""));
+				label_9.setText(Double.toString(vec3r.x1));
+				label_10.setText(Double.toString(vec3r.x2));
+				label_11.setText(Double.toString(vec3r.x3));
 			} else if(vec2 == null && vec3 == null) {
 				//Vec1
 				vec1r = vec1.substract(vec11);
-				label_9.setText(Double.toString(vec1r.x1).replace(".0", ""));
+				label_9.setText(Double.toString(vec1r.x1));
 				label_10.setText("");
 				label_11.setText("");
 			} else if(vec1 == null && vec3 == null) {
 				//Vec2
 				vec2r = vec2.substract(vec21);
-				label_9.setText(Double.toString(vec2r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec2r.x2).replace(".0", ""));
+				label_9.setText(Double.toString(vec2r.x1));
+				label_10.setText(Double.toString(vec2r.x2));
 				label_11.setText("");
 			}			
 		}
@@ -423,7 +420,7 @@ public class VectorFrame extends MainFrame implements ActionListener {
 				//Vec2
 				r = vec2.length();
 			}	
-			label_9.setText(Double.toString(r).replace(".0", ""));
+			label_9.setText(Double.toString(r));
 			label_10.setText("");
 			label_11.setText("");		
 		}
@@ -431,20 +428,20 @@ public class VectorFrame extends MainFrame implements ActionListener {
 			if(vec1 == null && vec2 == null) {
 				//Vec3
 				vec3r = vec3.unitVec();
-				label_9.setText(Double.toString(vec3r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec3r.x2).replace(".0", ""));
-				label_11.setText(Double.toString(vec3r.x3).replace(".0", ""));
+				label_9.setText(Double.toString(vec3r.x1));
+				label_10.setText(Double.toString(vec3r.x2));
+				label_11.setText(Double.toString(vec3r.x3));
 			} else if(vec2 == null && vec3 == null) {
 				//Vec1
 				vec1r = vec1.unitVec();
-				label_9.setText(Double.toString(vec1r.x1).replace(".0", ""));
+				label_9.setText(Double.toString(vec1r.x1));
 				label_10.setText("");
 				label_11.setText("");
 			} else if(vec1 == null && vec3 == null) {
 				//Vec2
 				vec2r = vec2.unitVec();
-				label_9.setText(Double.toString(vec2r.x1).replace(".0", ""));
-				label_10.setText(Double.toString(vec2r.x2).replace(".0", ""));
+				label_9.setText(Double.toString(vec2r.x1));
+				label_10.setText(Double.toString(vec2r.x2));
 				label_11.setText("");
 			}			
 		}
