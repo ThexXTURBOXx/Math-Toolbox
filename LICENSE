@@ -3,7 +3,7 @@ Copyright (c) 2016
 
 1 Definitions
 
-The developers are the writers of the software, ThexXTURBOXx.
+The developers (ThexXTURBOXx) are the writers of the software.
 The program refers to this software, including its source code and binary form and all copies thereof.
 
 
@@ -12,9 +12,10 @@ The program refers to this software, including its source code and binary form a
 Use of this software goes without warranty and at your own risk.
 The developers cannot be held accountable for any damage that might be related to the installation or use of this software.
 Problems with the software are to be reported under the following URL and should include instructions
-to reproduce the problem and, if available, a crash report: https://github.com/ThexXTURBOXx/Math-Toolbox/issues
+to reproduce the problem and, if available, a crash report (to get this, launch the program via the cmd command "java -jar <Filename here>" and copy the whole output): https://github.com/ThexXTURBOXx/Math-Toolbox/issues
 You also agree to the creation of files and folders on your PC. BUT of course, this is not malware or a virus.
 The files and folders are used for the config system of this application. They don't have bad purposes.
+The source code is written by the developers of the software and may not be used by any other person without his permission.
 
 
 3 Distribution
