@@ -8,7 +8,7 @@ public class UpdateCheck extends Thread {
 	
 	public static String latestVersion;
 	public static final String Version = "0.0.3";
-	public static boolean isNewest;
+	public static EnumUpdateStatus status;
 	
 	@Override
 	public void run() {
@@ -18,8 +18,13 @@ public class UpdateCheck extends Thread {
 			String inputLine;
 			while ((inputLine = in.readLine()) != null) latestVersion = inputLine;
 			in.close();
-			isNewest = latestVersion.equals(Version);
+			if(latestVersion.equals(Version)) {
+				status = EnumUpdateStatus.UP_TO_DATE;
+			} else {
+				status = EnumUpdateStatus.OLD;
+			}
 		} catch (Exception e) {
+			status = EnumUpdateStatus.ERRORED;
 			e.printStackTrace();
 		}
 	}

@@ -6,6 +6,7 @@ main.beginning=Startseite
 main.cfg=Einstellungen
 main.website=Webseite
 main.ufound=Neues Update gefunden! Lade es auf der Webseite herunter!
+main.uerror=Fehler bei der Suche nach Updates.
 
 cfg.lang=Sprache
 cfg.exit=Schließen

@@ -5,7 +5,8 @@ main.desc=You can also press on "Settings", if you need to change something.
 main.beginning=Homepage
 main.cfg=Settings
 main.website=Website
-main.ufound=New Update found! Download it on the website!
+main.ufound=New update found! Download it on the website!
+main.uerror=Error while searching for updates.
 
 cfg.lang=Language
 cfg.exit=Exit

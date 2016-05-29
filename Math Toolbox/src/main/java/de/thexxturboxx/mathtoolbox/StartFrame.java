@@ -33,10 +33,13 @@ public class StartFrame extends MainFrame implements ActionListener {
 		btnNewButton = new JButton(LangHelper.getTranslated("main.website"));
 		btnNewButton.addActionListener(this);
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setForeground(Color.MAGENTA);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		if(UpdateCheck.latestVersion != null && !UpdateCheck.isNewest) {
+		if(UpdateCheck.status == EnumUpdateStatus.OLD) {
+			lblNewLabel.setForeground(Color.MAGENTA);
 			lblNewLabel.setText(LangHelper.getTranslated("main.ufound"));
+		} else if(UpdateCheck.status == EnumUpdateStatus.ERRORED) {
+			lblNewLabel.setForeground(Color.RED);
+			lblNewLabel.setText(LangHelper.getTranslated("main.uerror"));
 		}
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
