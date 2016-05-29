@@ -1,4 +1,4 @@
-package de.thexxturboxx.mathtoolbox.math.algebra;
+package de.thexxturboxx.mathtoolbox.api.math;
 
 import java.util.ArrayList;
 import java.util.List;

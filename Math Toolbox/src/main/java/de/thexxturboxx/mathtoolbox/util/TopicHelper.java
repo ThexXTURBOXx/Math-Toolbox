@@ -5,8 +5,8 @@ import java.net.URISyntaxException;
 
 import de.thexxturboxx.mathtoolbox.MathToolbox;
 import de.thexxturboxx.mathtoolbox.StartFrame;
-import de.thexxturboxx.mathtoolbox.math.geometry.PythagorasFrame;
-import de.thexxturboxx.mathtoolbox.math.vectors.VectorFrame;
+import de.thexxturboxx.mathtoolbox.frames.math.PythagorasFrame;
+import de.thexxturboxx.mathtoolbox.frames.math.VectorFrame;
 
 public class TopicHelper {
 	

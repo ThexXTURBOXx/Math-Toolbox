@@ -1,4 +1,4 @@
-package de.thexxturboxx.mathtoolbox.math.geometry;
+package de.thexxturboxx.mathtoolbox.frames.math;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -17,6 +17,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import de.thexxturboxx.mathtoolbox.MainFrame;
 import de.thexxturboxx.mathtoolbox.MathToolbox;
+import de.thexxturboxx.mathtoolbox.api.math.Pythagoras;
 import de.thexxturboxx.mathtoolbox.util.JImage;
 import de.thexxturboxx.mathtoolbox.util.LangHelper;
 

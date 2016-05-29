@@ -1,4 +1,4 @@
-package de.thexxturboxx.mathtoolbox.math.algebra;
+package de.thexxturboxx.mathtoolbox.api.math;
 
 public class QuadEquation {
 	

@@ -1,4 +1,4 @@
-package de.thexxturboxx.mathtoolbox.math.vectors;
+package de.thexxturboxx.mathtoolbox.api.math;
 
 public class Vec3 {
 	

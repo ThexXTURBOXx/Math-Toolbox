@@ -1,4 +1,4 @@
-package de.thexxturboxx.mathtoolbox.math.geometry;
+package de.thexxturboxx.mathtoolbox.api.math;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

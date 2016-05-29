@@ -1,4 +1,4 @@
-package de.thexxturboxx.mathtoolbox.math.vectors;
+package de.thexxturboxx.mathtoolbox.frames.math;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -17,6 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import de.thexxturboxx.mathtoolbox.MainFrame;
+import de.thexxturboxx.mathtoolbox.api.math.Vec1;
+import de.thexxturboxx.mathtoolbox.api.math.Vec2;
+import de.thexxturboxx.mathtoolbox.api.math.Vec3;
 import de.thexxturboxx.mathtoolbox.util.LangHelper;
 
 @SuppressWarnings({"serial"})
