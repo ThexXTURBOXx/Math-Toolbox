@@ -6,7 +6,7 @@ Once it's finished, it will compute everything you need for your school/study. <
  - Java 6/7/8 (it doesn't matter, if it is 32-bit or 64-bit)
 
 ### Important links:
-[Downloads, when ready](https://github.com/ThexXTURBOXx/Math-Toolbox/releases) <br>
+[Downloads](https://github.com/ThexXTURBOXx/Math-Toolbox/releases) <br>
 [Website](http://thexxturboxx.github.io/Math-Toolbox) <br>
 
 ### Translation:
