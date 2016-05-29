@@ -69,7 +69,7 @@ public class MainFrame extends JFrame {
 		
 		String[] l = new String[] {
 				LangHelper.getTranslated("main.beginning"), LangHelper.getTranslated("math.vectors"),
-				LangHelper.getTranslated("math.pythagoras")/*, LangHelper.getTranslated("math.quadequation")*/
+				LangHelper.getTranslated("math.pythagoras"), LangHelper.getTranslated("math.quadequation")
 				};
 		
 		final JList list = new JList(l);

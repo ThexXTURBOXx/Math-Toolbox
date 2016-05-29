@@ -32,6 +32,8 @@ vectors.factor=oder Faktor
 
 pyth.desc=Gib hier alle Werte an, die du hast und drücke auf "Rechnen" (Lasse ggf. Felder frei).
 
+qe.desc=Gib hier alle Werte an, die du hast und drücke auf "Rechnen".
+
 exc.sidesubzero=Es kann keine Seite mit einer Länge unter 0 existieren.
 exc.twodiffsides=Es müssen mindestens 2 verschiedene Seiten angegeben werden.
 exc.katbiggerhyp=Eine Kathete kann nicht größer sein als eine Hypotenuse.
@@ -39,3 +41,5 @@ exc.sidenotfound=Die angegebene Seite kann nicht gefunden werden.
 exc.topicnotfound=Das Thema konnte nicht gefunden werden.
 exc.onevec=Es muss mindestens die X1-Koordinate gegeben sein.
 exc.cross3d=Ein Kreuzprodukt geht nur bei 3-dimensionalen Vektoren.
+exc.sqrtunderzero=Die Wurzel einer Zahl unter 0 existiert bei reelen Zahlen nicht.
+exc.divzero=Man kann nicht durch 0 teilen.

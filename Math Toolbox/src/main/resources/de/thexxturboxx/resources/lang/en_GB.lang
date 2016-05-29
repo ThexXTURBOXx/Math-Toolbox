@@ -32,6 +32,8 @@ vectors.factor=or Factor
 
 pyth.desc=Give all values you have and click on "Compute" (You may leave fields free).
 
+qe.desc=Give all values you have and click on "Compute".
+
 exc.sidesubzero=There can't be a side with a length sub 0.
 exc.twodiffsides=You have to give 2 different sides.
 exc.katbiggerhyp=A cathetus can't be bigger than a hypotenuse.
@@ -39,3 +41,5 @@ exc.sidenotfound=The given side can't be found.
 exc.topicnotfound=The topic can't be found.
 exc.onevec=There have to be a X1-Coordinate.
 exc.cross3d=A Cross Product only works for 3D-vectors.
+exc.sqrtunderzero=The root of a number, smaller than 0, doesn't exist for real numbers.
+exc.divzero=You can't divide through 0.

@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 import de.thexxturboxx.mathtoolbox.MathToolbox;
 import de.thexxturboxx.mathtoolbox.StartFrame;
 import de.thexxturboxx.mathtoolbox.frames.math.PythagorasFrame;
+import de.thexxturboxx.mathtoolbox.frames.math.QuadFrame;
 import de.thexxturboxx.mathtoolbox.frames.math.VectorFrame;
 
 public class TopicHelper {
@@ -16,6 +17,7 @@ public class TopicHelper {
 		case 0: MathToolbox.frame = new StartFrame(); break;
 		case 1: MathToolbox.frame = new VectorFrame(); break;
 		case 2: MathToolbox.frame = new PythagorasFrame(); break;
+		case 3: MathToolbox.frame = new QuadFrame(); break;
 		default: throw new IllegalArgumentException(LangHelper.getTranslated("exc.topicnotfound"));
 		}
 	}
