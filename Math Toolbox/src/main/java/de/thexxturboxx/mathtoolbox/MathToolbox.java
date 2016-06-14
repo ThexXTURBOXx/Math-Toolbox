@@ -1,6 +1,7 @@
 package de.thexxturboxx.mathtoolbox;
 
 import java.io.File;
+import java.util.Locale;
 
 import javax.swing.JFrame;
 
@@ -17,14 +18,30 @@ public class MathToolbox {
 		try {
 			//Main Loop
 			if(!configFile.exists()) {
+				System.out.println("<--- First-Run-Setup --->");
+				System.out.println("Creating necessary files and folders");
 				configFile.getParentFile().mkdirs();
 				configFile.createNewFile();
-				ConfigHelper.setInFile("lang", "en_GB");
+				System.out.println("Analyzing language");
+				if(Locale.getDefault().toString().equals("de_DE")) {
+					System.out.println("Using German");
+					ConfigHelper.setInFile("lang", "de_DE");
+				} else {
+					System.out.println("Using English");
+					ConfigHelper.setInFile("lang", "en_GB");
+				}
 			} else {
+				System.out.println("Getting values from config-file");
 				ConfigHelper.setAll();
 			}
 			synchronized(args) {
+				System.out.println("Checking for updates...");
 				new UpdateCheck().run();
+				switch(UpdateCheck.status) {
+					case ERRORED: System.out.println("Update-check exited with an error"); break;
+					case OLD: System.out.println("New update found: " + UpdateCheck.Version + " --> " + UpdateCheck.latestVersion); break;
+					case UP_TO_DATE: System.out.println("No update was found"); break;
+				}
 			}
 			frame = new StartFrame();
 		} catch (Exception e) {

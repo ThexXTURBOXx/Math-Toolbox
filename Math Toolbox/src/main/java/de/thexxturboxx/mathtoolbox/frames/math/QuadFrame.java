@@ -133,7 +133,7 @@ public class QuadFrame extends MainFrame implements ActionListener {
 		getContentPane().setLayout(groupLayout);
 		setVisible(true);
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btnNewButton) {

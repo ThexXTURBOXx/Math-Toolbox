@@ -7,7 +7,7 @@ import java.net.URL;
 public class UpdateCheck extends Thread {
 	
 	public static String latestVersion;
-	public static final String Version = "0.0.4";
+	public static final String Version = "0.0.5";
 	public static EnumUpdateStatus status;
 	
 	@Override
