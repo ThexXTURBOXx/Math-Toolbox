@@ -1,23 +1,20 @@
 package de.thexxturboxx.mathtoolbox.api.math;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
-import de.thexxturboxx.mathtoolbox.util.LangHelper;
+import de.thexxturboxx.mathtoolbox.exc.MathException;
 
 public class Pythagoras {
 	
 	private double a, b, c;
 	
-	public Pythagoras(double a, double b, double c) throws IllegalArgumentException, IOException, URISyntaxException {
+	public Pythagoras(double a, double b, double c) throws MathException {
 		if(a < 0 || b < 0 || c < 0) {
-			throw new IllegalArgumentException(LangHelper.getTranslated("exc.sidesubzero"));
+			throw new MathException("exc.sidesubzero");
 		}
 		if((a == 0 && b == 0) || (b == 0 && c == 0) || (a == 0 && c == 0)) {
-			throw new IllegalArgumentException(LangHelper.getTranslated("exc.twodiffsides"));
+			throw new MathException("exc.twodiffsides");
 		}
 		if((a >= c && c != 0) || (b >= c && c != 0)) {
-			throw new IllegalArgumentException(LangHelper.getTranslated("exc.katbiggerhyp"));
+			throw new MathException("exc.katbiggerhyp");
 		}
 		this.a = a;
 		this.b = b;
@@ -40,7 +37,7 @@ public class Pythagoras {
 		}
 	}
 	
-	public double get(String side) throws IOException, URISyntaxException {
+	public double get(String side) throws MathException {
 		if(side.equals("a")) {
 			return a;
 		} else if(side.equals("b")) {
@@ -48,7 +45,7 @@ public class Pythagoras {
 		} else if(side.equals("c")) {
 			return c;
 		} else {
-			throw new IllegalArgumentException(LangHelper.getTranslated("exc.sidenotfound"));
+			throw new MathException("exc.sidenotfound");
 		}
 	}
 	

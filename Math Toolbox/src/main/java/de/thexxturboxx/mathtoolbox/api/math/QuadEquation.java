@@ -1,28 +1,25 @@
 package de.thexxturboxx.mathtoolbox.api.math;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
-import de.thexxturboxx.mathtoolbox.util.LangHelper;
+import de.thexxturboxx.mathtoolbox.exc.MathException;
 
 public class QuadEquation {
 	
 	private double a, b, c;
 	private XList l;
 	
-	public QuadEquation(double a, double b, double c) throws IOException, URISyntaxException {
+	public QuadEquation(double a, double b, double c) throws MathException {
 		this.a = a;
 		this.b = b;
 		this.c = c;
 		compute();
 	}
 	
-	public void compute() throws IOException, URISyntaxException {
+	public void compute() throws MathException {
 		if(Math.pow(b, 2)-4*a*c < 0) {
-			throw new IllegalArgumentException(LangHelper.getTranslated("exc.sqrtunderzero"));
+			throw new MathException("exc.sqrtunderzero");
 		}
 		if(a == 0) {
-			throw new IllegalArgumentException(LangHelper.getTranslated("exc.divzero"));
+			throw new MathException("exc.divzero");
 		}
 		double x1 = (-b+Math.sqrt(Math.pow(b, 2)-4*a*c))/(2*a);
 		double x2 = (-b-Math.sqrt(Math.pow(b, 2)-4*a*c))/(2*a);

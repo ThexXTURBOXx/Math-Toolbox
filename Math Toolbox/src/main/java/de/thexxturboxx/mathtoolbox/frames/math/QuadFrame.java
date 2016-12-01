@@ -6,15 +6,13 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import javax.swing.GroupLayout;
+import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import de.thexxturboxx.mathtoolbox.MainFrame;
 import de.thexxturboxx.mathtoolbox.api.math.QuadEquation;
+import de.thexxturboxx.mathtoolbox.exc.MathException;
 import de.thexxturboxx.mathtoolbox.util.LangHelper;
 
 @SuppressWarnings("serial")
@@ -156,9 +154,7 @@ public class QuadFrame extends MainFrame implements ActionListener {
 			QuadEquation qe = null;
 			try {
 				qe = new QuadEquation(a, b, c);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			} catch (URISyntaxException e1) {
+			} catch (MathException e1) {
 				e1.printStackTrace();
 			}
 			R1.setText(Double.toString(qe.results().get(0)));

@@ -1,9 +1,6 @@
 package de.thexxturboxx.mathtoolbox.util;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -12,6 +9,17 @@ import java.util.List;
 import de.thexxturboxx.mathtoolbox.MathToolbox;
 
 public class LangHelper {
+	
+	public static String getTranslatedUnsafe(String name) {
+		try {
+			return getTranslated(name);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+		return name;
+	}
 	
 	public static String getTranslated(String name) throws IOException, URISyntaxException {
 		String s = newTranslation(name, ConfigHelper.get("lang"));

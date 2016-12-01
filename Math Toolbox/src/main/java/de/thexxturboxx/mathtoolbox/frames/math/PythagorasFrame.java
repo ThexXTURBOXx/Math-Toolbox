@@ -1,23 +1,19 @@
 package de.thexxturboxx.mathtoolbox.frames.math;
 
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import javax.swing.GroupLayout;
+import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import de.thexxturboxx.mathtoolbox.MainFrame;
 import de.thexxturboxx.mathtoolbox.MathToolbox;
 import de.thexxturboxx.mathtoolbox.api.math.Pythagoras;
+import de.thexxturboxx.mathtoolbox.exc.MathException;
 import de.thexxturboxx.mathtoolbox.util.JImage;
 import de.thexxturboxx.mathtoolbox.util.LangHelper;
 
@@ -187,20 +183,14 @@ public class PythagorasFrame extends MainFrame implements ActionListener {
 			Pythagoras p = null;
 			try {
 				p = new Pythagoras(a, b, c);
-			} catch (IllegalArgumentException e1) {
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			} catch (URISyntaxException e1) {
+			} catch (MathException e1) {
 				e1.printStackTrace();
 			}
 			try {
 				this.a.setText(Double.toString(a = p.get("a")));
 				this.b.setText(Double.toString(b = p.get("b")));
 				this.c.setText(Double.toString(c = p.get("c")));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			} catch (URISyntaxException e1) {
+			} catch (MathException e1) {
 				e1.printStackTrace();
 			}
 			alpha.setText(Double.toString(Math.toDegrees(Math.asin(a / c))));
